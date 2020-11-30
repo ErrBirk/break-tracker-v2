@@ -4,7 +4,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http, { cookie: false });
 const fs = require('fs');
 const mysql = require("mysql");
-let passcode = "------";
+let passcode = "AskIT2020";
 const usernameRegEx = /^[a-zA-Z]{5,15}$/;
 const passwordRegEx = /^[a-zA-Z0-9]{8,15}$/;
 let breakMode = "reservations";
@@ -45,7 +45,6 @@ io.on("connection", (socket) => {
       password: "jjrErNbrsBT76x3$",
       database: "piotrp_breaktool2",
       dateStrings: "date",
-    };
     };
     clientConn = mysql.createConnection(dbCfg);
     return clientConn;
